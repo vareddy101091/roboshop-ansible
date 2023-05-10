@@ -6,7 +6,7 @@ Environment=AMQP_HOST={{ lookup('aws_ssm', '{{ env }}.dispatch.amqp_host', regio
 Environment=AMQP_USER={{ lookup('aws_ssm', '{{ env }}.dispatch.amqp_user', region='us-east-1' ) }}
 Environment=AMQP_PASS={{ lookup('aws_ssm', '{{ env }}.dispatch.amqp_pass', region='us-east-1' ) }}
 
-ExecStart=/app/dispatch
+ExecStart=/usr/local/bin/uwsgi --ini dispatch.ini
 SyslogIdentifier=dispatch
 
 [Install]
