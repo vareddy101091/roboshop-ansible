@@ -2,7 +2,6 @@
   ansible.builtin.yum:
     name:
       - golang
-
   state: installed
 
 - name: Include app_prerequisites
