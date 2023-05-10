@@ -1,7 +1,7 @@
 - name: Install golang
   ansible.builtin.yum:
     name:
-      - golang
+       golang
   state: installed
 
 - name: Include app_prerequisites
