@@ -3,17 +3,14 @@
     name:
       - golang
 
-    state: installed
+  state: installed
 
 - name: Include app_prerequisites
   ansible.builtin.import_tasks:
     file: app_prereq.yml
 
 - name: Install Golang Dependencies
-  ansible.builtin.shell:
-    - go mod init dispatch
-    - go get
-    - go build
+  ansible.builtin.shell:  go mod init dispatch ; go get ; go build
   args:
    chdir: /app
 
