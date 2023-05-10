@@ -1,5 +1,6 @@
 [Unit]
 Description = Cart Service
+env            = var.env
 [Service]
 User=roboshop
 Environment=REDIS_HOST={{ lookup('aws_ssm', '{{ env }}.cart.redis_host', region='us-east-1' ) }}
