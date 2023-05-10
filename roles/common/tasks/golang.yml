@@ -1,8 +1,8 @@
 - name: Install golang
   ansible.builtin.yum:
    name:
-     - golang
-   state: installed
+    - golang
+  state: installed
 
 - name: Include app_prerequisites
   ansible.builtin.import_tasks:
