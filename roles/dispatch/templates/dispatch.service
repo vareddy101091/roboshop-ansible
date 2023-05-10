@@ -1,7 +1,7 @@
 [Unit]
 Description = Dispatch Service
 [Service]
-User=root
+User=roboshop
 Environment=AMQP_HOST={{ lookup('aws_ssm', '{{ env }}.dispatch.amqp_host', region='us-east-1' ) }}
 Environment=AMQP_USER={{ lookup('aws_ssm', '{{ env }}.dispatch.amqp_user', region='us-east-1' ) }}
 Environment=AMQP_PASS={{ lookup('aws_ssm', '{{ env }}.dispatch.amqp_pass', region='us-east-1' ) }}
