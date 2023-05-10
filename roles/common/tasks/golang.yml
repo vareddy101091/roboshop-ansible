@@ -14,8 +14,8 @@
     - go mod init dispatch
     - go get
     - go build
-  args:
-    chdir: /app
+   args:
+     chdir: /app
 
 - name: Include schema setup
   ansible.builtin.import_tasks:
