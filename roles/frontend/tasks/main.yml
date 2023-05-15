@@ -35,9 +35,7 @@
     name: nginx
     enabled: true
 
-
 - name: Import Filebeat
   ansible.builtin.import_role:
     name: elk
     tasks_from: filebeat
-
