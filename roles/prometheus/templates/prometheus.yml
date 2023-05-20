@@ -14,7 +14,7 @@ alerting:
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
   - "alerts.yml"
-  - "second_rules.yml"
+  # - "second_rules.yml"
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
@@ -29,9 +29,10 @@ scrape_configs:
         filters:
           - name: tag:Monitor
             values: [ "true" ]
-   relabel_configs:
-     {% for label in labels %}
+    relabel_configs:
+      {% for label in labels %}
 
-    - source_labels: [ __meta_ec2_tag_{{ label.tag }} ]
-      target_label: {{ label.label }}
+      - source_labels: [ __meta_ec2_tag_{{ label.tag }} ]
+        target_label: {{ label.label }}
       {%- endfor %}
+
